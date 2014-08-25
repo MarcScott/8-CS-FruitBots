@@ -1,26 +1,43 @@
-  var moving_east = false;
+function new_game() {
+}
 
-  function new_game() {
-  }
+function default_board_number(){
+    return 1;
+}
 
-  function make_move(){
-      //log the board size and position
-      console.log("The board's dimensions are " + WIDTH + " X " + HEIGHT);
-      console.log("My FruitBot is at " + get_my_x() + "," + get_my_y());
+//var target = [0,0]
 
-      // detect if at the edge of the board
-      if(get_my_x() === 0){
-          moving_east = true;
-      }
-      if(get_my_x() === WIDTH-1){
-          moving_east = false;
-      }
-      
-      // move the bot
-      if(moving_east === true){
-          return EAST
-      }
-      else{
-          return WEST
-      }
-  }
+function find_fruits(fruit){
+    board = get_board();
+    for(var i = 0; i < board.length; i++){
+	for(var j = 0; j < board[i].length; j++){
+	    if (board[i][j] === fruit){
+		return [i,j]
+	    }
+	}
+    }
+}
+
+function make_move(){
+    target = find_fruits(4)
+    my_x = get_my_x()
+    my_y = get_my_y()
+    target_x = target[0]
+    target_y = target[1]
+    
+    if(my_x === target_x && my_y === target_y){
+	return TAKE
+    }
+    else if (my_x < target_x){
+	return EAST
+    }
+    else if (my_x > target_x){
+	return WEST
+    }
+    else if (my_y < target_y){
+	return SOUTH
+    }
+    else if (my_y > target_y){
+	return NORTH
+    }
+}
