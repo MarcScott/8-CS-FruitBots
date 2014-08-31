@@ -84,14 +84,12 @@ FruitBots is a simple JavaScript game. You program a small bot to move around a 
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-
 The game board for FruitBots looks like this
 [[file:img/GameBoard_1.png]]
 ** Save It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: save
 :END:
-
 - To start creating your own FruitBot, you're going to need the testing framework.
 - Create a new directory in your home folder and call it FruitBots.
 - Right click on this [[file:~/Curriculum/8CS-FruitBots/testing/][LINK]] and download the directory, saving it in your FruitBots directory.
@@ -99,11 +97,9 @@ The game board for FruitBots looks like this
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-
 - Open up the testing directory.
 - You should find a file called mybot.js
 - Open mybot.js in a text editor and you should see the following code:
-
 #+BEGIN_SRC javascript
 function new_game(){
 }
@@ -114,7 +110,6 @@ function make_move(){
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: run
 :END:
-
 - Let's run the program and see what happens.
 - In the testing directory, you should see a webpage called game.html
 - Open up game.html in a browser and a random board will be displayed, with two bots.
@@ -130,8 +125,9 @@ function make_move(){
 :END:
 - A function is a *named* block of code that performs some *tast*
 - In our code we have a function called =make_move()=
-- This function is called every time it is your turn to move.
-- The funtion can return any of the following cosntants
+- This function is called every time it is your turn to move. So each time your FruitBot needs to make a move, the code inside =make_move()= is run.
+- Functions can output data. We call this a =return=. If you were to tell your function to /return 1/ it would output the number 1. If you told you funtion to =return fish= it would output the string /fish/.
+- The FruitBot game only understands 6 bits of data that =make_move()= returns. The funtion can return any of the following constants
   - EAST (move east)
   - NORTH (move north)
   - WEST (move west)
@@ -176,7 +172,6 @@ function make_move(){
   }
 
   function default_board_number() {
-
       return 123;
   }
 
@@ -190,13 +185,13 @@ function make_move(){
 :HTML_CONTAINER_CLASS: learn
 :END:
 - We can find the width and the height of the board using the constants =HEIGHT= and =WIDTH=
-- We can find the position of your bot on the board by using the functions =get_my_x()= and =get_my_y()=
+- We can find the position of your bot on the board by using =get_my_x()= and =get_my_y()=
 - In FruitBots the top left square has the coordinates 0,0
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- Let's use =console.log()= to find out our FruitBot's position and the size of the board.
+- Let's use =console.log()= to find out our FruitBot's position and the size of the board. =console.log()= will output data in the browser for you.
 - Change your code so that it looks like this:
 #+BEGIN_SRC javascript
   function new_game() {
@@ -213,21 +208,19 @@ function make_move(){
 :HTML_CONTAINER_CLASS: run
 :END:
 - Run game.html
-- Open a console so you can see your console logs.
+- Open a console so you can see your console logs. If this is your first time using a console, you can find out how to open it [[http://webmasters.stackexchange.com/questions/8525/how-to-open-the-javascript-console-in-different-browsers][here]]
 - Check that the console is correctly reporting the board size and the bot position.
 ** Learn It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-
 - In programming we often use the term flag.
 - A flag is a usually a variable that describes the state of some property of the program.
-- For instance we might have a =Logged_In= and then set it to =True= if the user has logged in and =False= if the user has not logged in.
+- For instance we might have a =Logged_In= flag and then set it to =True= if the user has logged in and =False= if the user has not logged in.
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-
 - Let's add a flag into our script called =moving_east= and set it to =true=
 - We'll add it outside of our functions, so that it is initially set only once, when the game begins.
 #+BEGIN_SRC javascript
@@ -242,7 +235,24 @@ function make_move(){
     return EAST
 }
 #+END_SRC
-- Out flag doesn't actually do anything yet, let's change that.
+- Out flag doesn't actually do anything yet, let's change that using a conditional statement.
+- You should have used conditionals before, but just to recap:
+  - A conditional is like a branch in a program.
+  - If a /condition/ is met then one bit of code is run, and if it is not met then another bit of code is run.
+- In JavaScript a conditional looks like this.
+#+BEGIN_SRC javascript
+if (condition){
+    do this
+}
+else if (condition){
+    do this
+}
+else{
+    do this
+}
+#+END_SRC
+
+- Let's use a conditional statement to make our bot choose a direction of travel.
 #+BEGIN_SRC javascript
   var moving_east = true;
 
@@ -264,19 +274,16 @@ function make_move(){
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: run
 :END:
-
 - Run your code and your FruitBot should move East, as it did before.
 ** Try It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-
 - Now set the flag to =false=, and see what happens
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-
 - We can now control if our bot moves East or West depending on the =moving_east= flag.
 - Let's alter the flag depending on the position of the bot on the board.
 - If the bot's =x= position is equal to =0=, then the bot is at the far left of the board and should move east.
@@ -315,14 +322,12 @@ function make_move(){
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: run
 :END:
-
 - Run your code and your FruitBot should move East, as it did before.
 - Run game.html and make sure that it works.
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-
 - To earn your first FruitBots badge you'll need to make you're fruit bot bounce.
 - Create a new flag called =moving_north=
 - Now alter your code so that the FruitBot bounces up and down, instead of PingPongin left and right.

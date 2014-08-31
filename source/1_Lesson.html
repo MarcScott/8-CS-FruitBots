@@ -189,7 +189,6 @@ FruitBots is a simple JavaScript game. You program a small bot to move around a 
 <div id="outline-container-sec-1-1" class="outline-3 learn">
 <h3 id="sec-1-1">Learn It</h3>
 <div class="outline-text-3" id="text-1-1">
-
 <p>
 The game board for FruitBots looks like this
 <img src="img/GameBoard_1.png" alt="GameBoard_1.png" />
@@ -204,7 +203,7 @@ The game board for FruitBots looks like this
 </li>
 <li>Create a new directory in your home folder and call it FruitBots.
 </li>
-<li>Right click on this <a href="file:///Users/coding2learn/Curriculum/8CS-FruitBots/testing.zip">LINK</a> and download the directory, saving it in your FruitBots directory.
+<li>Right click on this <a href="file:///Users/coding2learn/Curriculum/8CS-FruitBots/testing/">LINK</a> and download the directory, saving it in your FruitBots directory.
 </li>
 </ul>
 </div>
@@ -212,7 +211,6 @@ The game board for FruitBots looks like this
 <div id="outline-container-sec-1-3" class="outline-3 code">
 <h3 id="sec-1-3">Code It</h3>
 <div class="outline-text-3" id="text-1-3">
-
 <ul class="org-ul">
 <li>Open up the testing directory.
 </li>
@@ -221,7 +219,6 @@ The game board for FruitBots looks like this
 <li>Open mybot.js in a text editor and you should see the following code:
 </li>
 </ul>
-
 <div class="org-src-container">
 
 <pre class="src src-javascript">function new_game(){
@@ -235,7 +232,6 @@ function make_move(){
 <div id="outline-container-sec-1-4" class="outline-3 run">
 <h3 id="sec-1-4">Run It</h3>
 <div class="outline-text-3" id="text-1-4">
-
 <ul class="org-ul">
 <li>Let's run the program and see what happens.
 </li>
@@ -265,9 +261,11 @@ function make_move(){
 </li>
 <li>In our code we have a function called <code>make_move()</code>
 </li>
-<li>This function is called every time it is your turn to move.
+<li>This function is called every time it is your turn to move. So each time your FruitBot needs to make a move, the code inside <code>make_move()</code> is run.
 </li>
-<li>The funtion can return any of the following cosntants
+<li>Functions can output data. We call this a <code>return</code>. If you were to tell your function to <i>return 1</i> it would output the number 1. If you told you funtion to <code>return fish</code> it would output the string <i>fish</i>.
+</li>
+<li>The FruitBot game only understands 6 bits of data that <code>make_move()</code> returns. The funtion can return any of the following constants
 <ul class="org-ul">
 <li>EAST (move east)
 </li>
@@ -346,7 +344,6 @@ function make_move(){
 }
 
 function default_board_number() {
-
     return 123;
 }
 
@@ -367,7 +364,7 @@ function make_move(){
 <ul class="org-ul">
 <li>We can find the width and the height of the board using the constants <code>HEIGHT</code> and <code>WIDTH</code>
 </li>
-<li>We can find the position of your bot on the board by using the functions <code>get_my_x()</code> and <code>get_my_y()</code>
+<li>We can find the position of your bot on the board by using <code>get_my_x()</code> and <code>get_my_y()</code>
 </li>
 <li>In FruitBots the top left square has the coordinates 0,0
 </li>
@@ -378,7 +375,7 @@ function make_move(){
 <h3 id="sec-3-3">Code It</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
-<li>Let's use <code>console.log()</code> to find out our FruitBot's position and the size of the board.
+<li>Let's use <code>console.log()</code> to find out our FruitBot's position and the size of the board. <code>console.log()</code> will output data in the browser for you.
 </li>
 <li>Change your code so that it looks like this:
 </li>
@@ -403,7 +400,7 @@ function make_move(){
 <ul class="org-ul">
 <li>Run game.html
 </li>
-<li>Open a console so you can see your console logs.
+<li>Open a console so you can see your console logs. If this is your first time using a console, you can find out how to open it <a href="http://webmasters.stackexchange.com/questions/8525/how-to-open-the-javascript-console-in-different-browsers">here</a>
 </li>
 <li>Check that the console is correctly reporting the board size and the bot position.
 </li>
@@ -413,13 +410,12 @@ function make_move(){
 <div id="outline-container-sec-3-5" class="outline-3 learn">
 <h3 id="sec-3-5">Learn It</h3>
 <div class="outline-text-3" id="text-3-5">
-
 <ul class="org-ul">
 <li>In programming we often use the term flag.
 </li>
 <li>A flag is a usually a variable that describes the state of some property of the program.
 </li>
-<li>For instance we might have a <code>Logged_In</code> and then set it to <code>True</code> if the user has logged in and <code>False</code> if the user has not logged in.
+<li>For instance we might have a <code>Logged_In</code> flag and then set it to <code>True</code> if the user has logged in and <code>False</code> if the user has not logged in.
 </li>
 </ul>
 </div>
@@ -427,7 +423,6 @@ function make_move(){
 <div id="outline-container-sec-3-6" class="outline-3 code">
 <h3 id="sec-3-6">Code It</h3>
 <div class="outline-text-3" id="text-3-6">
-
 <ul class="org-ul">
 <li>Let's add a flag into our script called <code>moving_east</code> and set it to <code>true</code>
 </li>
@@ -449,7 +444,35 @@ function make_move(){
 </pre>
 </div>
 <ul class="org-ul">
-<li>Out flag doesn't actually do anything yet, let's change that.
+<li>Out flag doesn't actually do anything yet, let's change that using a conditional statement.
+</li>
+<li>You should have used conditionals before, but just to recap:
+<ul class="org-ul">
+<li>A conditional is like a branch in a program.
+</li>
+<li>If a <i>condition</i> is met then one bit of code is run, and if it is not met then another bit of code is run.
+</li>
+</ul>
+</li>
+<li>In JavaScript a conditional looks like this.
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-javascript">if (condition){
+    do this
+}
+else if (condition){
+    do this
+}
+else{
+    do this
+}
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Let's use a conditional statement to make our bot choose a direction of travel.
 </li>
 </ul>
 <div class="org-src-container">
@@ -476,7 +499,6 @@ function make_move(){
 <div id="outline-container-sec-3-7" class="outline-3 run">
 <h3 id="sec-3-7">Run It</h3>
 <div class="outline-text-3" id="text-3-7">
-
 <ul class="org-ul">
 <li>Run your code and your FruitBot should move East, as it did before.
 </li>
@@ -486,7 +508,6 @@ function make_move(){
 <div id="outline-container-sec-3-8" class="outline-3 try">
 <h3 id="sec-3-8">Try It</h3>
 <div class="outline-text-3" id="text-3-8">
-
 <ul class="org-ul">
 <li>Now set the flag to <code>false</code>, and see what happens
 </li>
@@ -496,7 +517,6 @@ function make_move(){
 <div id="outline-container-sec-3-9" class="outline-3 code">
 <h3 id="sec-3-9">Code It</h3>
 <div class="outline-text-3" id="text-3-9">
-
 <ul class="org-ul">
 <li>We can now control if our bot moves East or West depending on the <code>moving_east</code> flag.
 </li>
@@ -548,7 +568,6 @@ function make_move(){
 <div id="outline-container-sec-3-10" class="outline-3 run">
 <h3 id="sec-3-10">Run It</h3>
 <div class="outline-text-3" id="text-3-10">
-
 <ul class="org-ul">
 <li>Run your code and your FruitBot should move East, as it did before.
 </li>
@@ -560,7 +579,6 @@ function make_move(){
 <div id="outline-container-sec-3-11" class="outline-3 badge">
 <h3 id="sec-3-11">Badge It</h3>
 <div class="outline-text-3" id="text-3-11">
-
 <ul class="org-ul">
 <li>To earn your first FruitBots badge you'll need to make you're fruit bot bounce.
 </li>

@@ -2,7 +2,7 @@ function new_game() {
 }
 
 function default_board_number(){
-    return 2;
+    return 1;
 }
 
 var visitedTarget = false;
@@ -49,15 +49,15 @@ function moveInSnake(){
     
 function make_move(){
     board = get_board()
-    //Take the yummy fruit if it's there
-    if (board[get_my_x()][get_my_y()] > 0){
-	return TAKE
-    }
+
     //Check the flag to see if we've been to the target
-    else if (visitedTarget === false){
+    if (visitedTarget === false){
 	return moveToTarget(0,0);
     }
-    
+    //Take the yummy fruit if it's there
+    else if (board[get_my_x()][get_my_y()] > 0){
+	return TAKE
+    }
     //No fruit so let's move like a snake.
     else{
 	return moveInSnake();

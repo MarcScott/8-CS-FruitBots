@@ -83,7 +83,6 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-
 - It would be helpful if we could move out FruitBot to a specific square on the board.
 - Any position on the board can be described by two numbers; an x coordinate and a y coordinate
 - The smallest x and y positions are 0, and the largest are WIDTH - 1 and HEIGHT - 1
@@ -91,23 +90,27 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-
 - Let's imagine out bot is at the coordinates x = 4 and y = 3.
 - Now let's imagine we want out bot to move to x = 6 and y = 1.
 - Which two directions do we need the bot to move in?
+- How about if you needed the bot to go to x = 8 and y = 5?
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+- Write down how you can *calculate* whether the bot needs to move EAST or WEST and NORTH or SOUTH.
+- Show your explanation to your teacher.
 ** Save It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: save
 :END:
-
-- Rename your old bot to /Lesson1_bot.js/
+- Rename your old bot from the previous lesson to /Lesson1Bot.js/
 - Now create a new file called /mybot.js/
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-
--Add this code to mybot.js. This time we're going to specify which board we want to use, rather than using a random one each time.
+- Add this code to mybot.js. This time we're going to specify that we want to use board 1 to test our scripts.
 #+BEGIN_SRC javascript
 function new_game() {
 }
@@ -124,8 +127,9 @@ function make_move(){
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-
 - We'll start by setting a position for our FruitBot to go to.
+- To do this we'll create two new variables. =target_x= and =target_y=.
+- Because these variables are declared outside of any functions, we call them /global variables/, meaning any function in our program can use them.
 #+BEGIN_SRC javascript
 var target_x = 6;
 var target y = 1;
@@ -142,6 +146,21 @@ function make_move(){
 }
 #+END_SRC
 - Now we need to edit the =make_move()= function. Make sure you're editing the correct function when we do this.
+- First we'll create variables for the bot's current position - =my_x= and =my_y=.
+- Because these variables are declared inside the function, they are called /local variables/. Only the =make_move()= function can use them.
+
+#+BEGIN_SRC javascript
+  function make_move(){
+      //store the player's x and y position in variables for clearer code.
+      var my_x = get_my_x()
+      var my_y = get_my_y()
+  }
+#+END_SRC
+
+- Now, if =my_x= is less than the =target_x= we need the bot to move EAST.
+- If =my_x= is greater than the =target_x= we need the bot to move WEST.
+- We use =<= for less than and =>= for greater than.
+
 #+BEGIN_SRC javascript
   function make_move(){
       //store the player's x and y position in variables for clearer code.
@@ -160,168 +179,11 @@ function make_move(){
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: run
 :END:
-
-
 - Run game.html and make sure your FruitBot is moving to the correct x position.
-** Try It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: try
-:END:
-
-- With two more =else if= conditions we can make out FruitBot move towards the y target. Have a go adding these and see if your FruitBot works.
-- Try changing the =target_x= and =target_y= variables to make your FruitBot move to different fruits on the board.
-- Add a final =else{return PASS}= condition to the end of the function, so that the FruitBot does nothing when it reaches it's target x and y.
-* Picking up Fruit on the Way
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
-:END:
-** Learn It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: learn
-:END:
-
-- It would be helpful if we could move out FruitBot to a specific square on the board.
-- Any position on the board can be described by two numbers; an x coordinate and a y coordinate
-- The smallest x and y positions are 0, and the largest are WIDTH - 1 and HEIGHT - 1
-- The acutal FruitBots program needs to store the position of all the fruits on the board.
-- This is done using a data structure called an /array/ and in particular what is called a 2d array.
-- Look at the board for game 1 that we have been using.
-- If we wanted to store the positions of fruit for the first column, we could use an array like this - *[Cherry, Melon, Nothing, Nothing, Nothing, Nothing]*
-- The second column would need another array - *[Melon, Nothing, Nothing, Nothing, Nothing, Melon]*
-- The third dolum would need another array - *[Melon., Nothing, Banana, Melon, Nothing, Nothing]*
-- This would continue and we would end up with 7 arrays.
-- We can then store each of these 7 arrays in a giant array, and this is called a 2d array.
-- Of course it is not very efficient to store fruit types using strings, so numbers are used instead.
-- 0 = Empty, 1 = Strawberry, 2 = Banana, 3 = Cherry, 4 = Melon
-- The entire array for the first board can therefore be described as follows.
-#+BEGIN_SRC javascript
-[[3,4,0,0,0,0]
- [4,0,0,0,0,4]
- [4,0,2,4,0,0]
- [0,0,4,2,0,0]
- [0,1,4,0,2,0]
- [3,0,0,0,0,3]
- [3,3,0,0,0,0]]
-#+END_SRC
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- We need to get our bot to pick up fruit as it moves about the board.
-- First we'll need to get the board's 2d array and store it.
-#+BEGIN_SRC javascript
-  function make_move(){
-      //get the board's 2d array
-      board = get_board()
-
-      //store the player's x and y position in variables for clearer code.
-      var my_x = get_my_x()
-      var my_y = get_my_y()
-      console.log(get_board())
-      
-      if(my_x < target_x){
-          return EAST
-      }
-      else if(my_x > target_x){
-          return WEST
-      }
-      else if(my_y < target_y){
-          return SOUTH
-      }
-      else if(my_y > target_y){
-          return NORTH
-      }
-      else{
-          return PASS
-      }
-  }
-#+END_SRC
-- We can access the fruit at any coordinate on the board using the following syntax - =board[x][y]
-- This will give us the /yth/ value in the /xth/ array.
-- Therefore =board[my_x][my_y]= will give the fruit at your bot's position.
-- If the value is greater than 0, we should =TAKE= the fruit.
-#+BEGIN_SRC javascript
-  function make_move(){
-      //get the board's 2d array
-      board = get_board()
-
-      //store the player's x and y position in variables for clearer code.
-      var my_x = get_my_x()
-      var my_y = get_my_y()
-      console.log(get_board())
-      
-      if(board[my_x][my_y] > 0){
-          return TAKE
-      }
-
-      else if(my_x < target_x){
-          return EAST
-      }
-      else if(my_x > target_x){
-          return WEST
-      }
-      else if(my_y < target_y){
-          return SOUTH
-      }
-      else if(my_y > target_y){
-          return NORTH
-      }
-      else{
-          return PASS
-      }
-  }
-#+END_SRC
-** Run It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: run
-:END:
-
-- Run game.hmtl
-- Try changing your bot's target_x and target_y so that it picks up as many fruit as possible
-* Picking up all the Fruit (in theory)
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
-:END:
-** Learn It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: learn
-:END:
-
-- Sometimes it is handy to think of algorithms to solve our problems without actually writing any code.
-- For instance, an algorithm to collect every fruit on the board could look something like this
-#+BEGIN_SRC
-REPEAT THE FOLLOWINGFOREVER
-1. PICK A RANDOM NUMBER BETWEEN 1 and 4
-2. IF NUMBER IS 1 THEN MOVE NORTH, IF IT IS 2 THEN MOVE SOUTH, IF IT IS 3 THEN MOVE EAST, IF IT IS 4 THEN MOVE WEST.
-3. IF THERE IS A FRUIT ON THE SQUARE THEN TAKE IT
-#+END_SRC
-- You can try out this algorithm using the following code.
-#+BEGIN_SRC javascript
-function make_move() {
-   var board = get_board();
-
-   // we found an item! take it!
-   if (board[get_my_x()][get_my_y()] > 0) {
-       return TAKE;
-   }
-
-   var rand = Math.random() * 4;
-
-   if (rand < 1) return NORTH;
-   if (rand < 2) return SOUTH;
-   if (rand < 3) return EAST;
-   if (rand < 4) return WEST;
-
-   return PASS;
-}
-#+END_SRC
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-
-- Try and come up with your own algorithm to take all the fruit on the board.
-- You can work with a partner or on your own.
-- Try to think of the most efficient way of getting to every square on the board, or maybe even just the squares that have fruit on them
-- When you have finished your algorithm, show it to your teacher to get your badge.
-- If you have time, you can try and code your algorithm.
+- With two more =else if= conditions we can make out FruitBot move towards the y target. Have a go adding these and see if your FruitBot works.
+- Try changing the =target_x= and =target_y= variables to make your FruitBot move to different fruits on the board.
+- Add a final =else{return PASS}= condition to the end of the function, so that the FruitBot does nothing when it reaches it's target x and y.
