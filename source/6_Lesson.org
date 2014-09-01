@@ -75,3 +75,52 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
+* Playing against an opponent
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+- So we've got some code that will let us pick up all the fruit on the board.
+- Let's see how we do against a simpleBot that has been writte to compete against us.
+- Go into the testing directory, then into a directory called assets, then into a directory called js.
+- In there you should find a bot called simplebot.js. This is your opponent.
+- Open simplebot.js in a text editor.
+- At the top of simplebot.js is some code that looks like this.
+#+BEGIN_SRC javascript
+var SimpleBot = {
+    makeMove: function() {
+       // to disable to opponent, uncomment the next line
+       return PASS;
+#+END_SRC
+- Comment out the =return PASS;= so it looks like this.
+#+BEGIN_SRC javascript
+var SimpleBot = {
+    makeMove: function() {
+       // to disable to opponent, uncomment the next line
+       // return PASS;
+#+END_SRC
+- Save the file.
+- Now you have a bot to play against.
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+- Try running your bot from last lesson against the simpleBot.js
+- How did you do?
+- Change the default game board and see how you do on different boards.
+* The FruitBot rules
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+- The rules of FruitBots are very simple.
+- The bot that collects the most fruit, in the most categories wins.
