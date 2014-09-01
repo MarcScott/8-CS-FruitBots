@@ -1,8 +1,8 @@
 #+STARTUP:indent
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="pages/css/styles.css"/>
-#+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil html-style:nil 
-
-#+TITLE: How The Internet Works
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil  
+#+TITLE: FruitBots
 #+AUTHOR: Marc Scott
 
 
@@ -11,5 +11,12 @@
 <a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
 </div>
 #+END_HTML
-* [[file:pages/1_Lesson.html][Lesson 1 - An Introduction to Scratch]]
+* [[file:pages/1_Lesson.html][Lesson 1 - Move you bot]]
+* [[file:pages/2_lesson.html][Lesson 2 - Precision movement]]
+* [[file:pages/3_lesson.html][Lesson 3 - Take that melon]]
+* [[file:pages/4_Lesson.html][Lesson 4 - Functions]]
+* [[file:pages/5_Lesson.html][Lesson 5 - Moving like a snake]]
+* Lesson 6 - The first rule of FruitBots
+* Lesson 7 - Fruit Ninja
+* Lesson 8 - Know thy enemy.
 
