@@ -92,7 +92,7 @@ The game board for FruitBots looks like this
 :END:
 - To start creating your own FruitBot, you're going to need the testing framework.
 - Create a new directory in your home folder and call it FruitBots.
-- Right click on this [[file:~/Curriculum/8CS-FruitBots/testing/][LINK]] and download the directory, saving it in your FruitBots directory.
+- Right click on this [[file:~/Curriculum/8-CS-FruitBots/testing.zip][LINK]] and download the directory, saving it in your FruitBots directory.
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
