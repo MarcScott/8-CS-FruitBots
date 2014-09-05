@@ -11,7 +11,7 @@
 <a href="https://github.com/MarcScott/7-CS-Internet">Fork me on GitHub</a>
 </div>
 #+END_HTML
-* [[file:pages/1_Lesson.html][Week 1 - Move you bot]]
+* [[file:pages/1_Lesson.html][Week 1 - Move your bot]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
