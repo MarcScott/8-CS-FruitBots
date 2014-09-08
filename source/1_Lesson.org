@@ -123,7 +123,7 @@ function make_move(){
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- A function is a *named* block of code that performs some *tast*
+- A function is a *named* block of code that performs some *task*
 - In our code we have a function called =make_move()=
 - This function is called every time it is your turn to move. So each time your FruitBot needs to make a move, the code inside =make_move()= is run.
 - Functions can output data. We call this a =return=. If you were to tell your function to /return 1/ it would output the number 1. If you told you funtion to =return fish= it would output the string /fish/.
@@ -199,7 +199,7 @@ function make_move(){
 
   function make_move(){
       console.log("The board's dimensions are " + WIDTH + " X " + HEIGHT);
-      console.log("My FruitBot is at " + get_my_x() + "," + get_my_y();
+      console.log("My FruitBot is at " + get_my_x() + "," + get_my_y());
       return EAST
   }
 #+END_SRC
