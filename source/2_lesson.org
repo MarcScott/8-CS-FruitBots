@@ -132,7 +132,7 @@ function make_move(){
 - Because these variables are declared outside of any functions, we call them /global variables/, meaning any function in our program can use them.
 #+BEGIN_SRC javascript
 var target_x = 6;
-var target y = 1;
+var target_y = 1;
 
 function new_game() {
 }
