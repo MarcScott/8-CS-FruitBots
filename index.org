@@ -31,7 +31,7 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
-* Week 6 - The first rule of FruitBots
+* [[file:pages/6_Lesson.html][Week 6 - The first rule of FruitBots]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
