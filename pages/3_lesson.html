@@ -181,7 +181,7 @@ for the JavaScript code in this tag.
 </li>
 <li>The smallest x and y positions are 0, and the largest are WIDTH - 1 and HEIGHT - 1
 </li>
-<li>The acutal FruitBots program needs to store the position of all the fruits on the board.
+<li>The actual FruitBots program needs to store the position of all the fruits on the board.
 </li>
 </ul>
 </div>
@@ -257,7 +257,7 @@ Wednesday
 </li>
 <li>The second column would need another array - <b>[Melon, Nothing, Nothing, Nothing, Nothing, Melon]</b>
 </li>
-<li>The third dolum would need another array - <b>[Melon., Nothing, Banana, Melon, Nothing, Nothing]</b>
+<li>The third column would need another array - <b>[Melon., Nothing, Banana, Melon, Nothing, Nothing]</b>
 </li>
 <li>This would continue and we would end up with 7 arrays.
 </li>
@@ -265,7 +265,7 @@ Wednesday
 </li>
 <li>Of course it is not very efficient to store fruit types using strings, so numbers are used instead.
 </li>
-<li>0 = Empty, 1 = Strawberry, 2 = Banana, 3 = Cherry, 4 = Melon
+<li>0 = Empty, 1 = Apple, 2 = Banana, 3 = Cherry, 4 = Melon
 </li>
 <li>The entire array for the first board can therefore be described as follows.
 </li>
@@ -352,7 +352,7 @@ Wednesday
 </li>
 <li>This will give us the <i>yth</i> value in the <i>xth</i> array.
 </li>
-<li>So boardwould give you the 3rd fruit in the 5th array. Or in other words the fruit at x = 5 and y = 3.
+<li>So board[3][5] would give you the 3rd fruit in the 5th array. Or in other words the fruit at x = 5 and y = 3.
 </li>
 <li>Therefore <code>board[my_x][my_y]</code> will give the fruit at your bot's current position.
 </li>
@@ -442,6 +442,7 @@ REPEAT THE FOLLOWING EACH MOVE
        return TAKE;
    }
    // No fruit here so let's pick a direction to go in.
+   // Make sure that you don't write Maths.random()
    var rand = Math.random() * 4;
 
    if (rand &lt; 1) return NORTH;

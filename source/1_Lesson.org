@@ -123,19 +123,19 @@ function make_move(){
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- A function is a *named* block of code that performs some *task*
-- In our code we have a function called =make_move()=
-- This function is called every time it is your turn to move. So each time your FruitBot needs to make a move, the code inside =make_move()= is run.
-- Functions can output data. We call this a =return=. If you were to tell your function to /return 1/ it would output the number 1. If you told you funtion to =return fish= it would output the string /fish/.
-- The FruitBot game only understands 6 bits of data that =make_move()= returns. The funtion can return any of the following constants
++ A function is a *named* block of code that performs some *task*
++ In our code we have a function called =make_move()=
++ This function is called every time it is your turn to move. So each time your FruitBot needs to make a move, the code inside =make_move()= is run.
++ Functions can output data. We call this a =return=. If you were to tell your function to /return 1/ it would output the number 1. If you told you funtion to =return fish= it would output the string /fish/.
++ The FruitBot game only understands 6 bits of data that =make_move()= returns. The function can return any of the following constants
   - EAST (move east)
   - NORTH (move north)
   - WEST (move west)
   - SOUTH (move south)
   - TAKE (pick up a fruit if there is one on the square)
   - PASS (do nothing)
-- Let's try something simple first of all. Let's get our FruitBot to move East.
-- Edit the code in mybot.js so that it looks like this.
++ Let's try something simple first of all. Let's get our FruitBot to move East.
++ Edit the code in mybot.js so that it looks like this.
 #+BEGIN_SRC javascript
   function new_game(){
   }
@@ -214,7 +214,7 @@ function make_move(){
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- In programming we often use the term flag.
+- In programming we often use the term /flag/.
 - A flag is a usually a variable that describes the state of some property of the program.
 - For instance we might have a =Logged_In= flag and then set it to =True= if the user has logged in and =False= if the user has not logged in.
 ** Code It
@@ -330,5 +330,5 @@ else{
 :END:
 - To earn your first FruitBots badge you'll need to make you're fruit bot bounce.
 - Create a new flag called =moving_north=
-- Now alter your code so that the FruitBot bounces up and down, instead of PingPongin left and right.
+- Now alter your code so that the FruitBot bounces up and down, instead of going left and right.
 - Show your teacher when you are done.
