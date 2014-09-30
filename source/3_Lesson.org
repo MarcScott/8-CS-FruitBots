@@ -107,7 +107,7 @@ wednesday = [Battered Cod, Chips, Peas]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- Now imagine we needed to store several meals. For this we would need a 2d array. This is basically a list containing lists.
+- Now imagine we needed to store several meals. For this we would need a 2d array. This is basically a list of lists.
 #+BEGIN_EXAMPLE
 Monday
     Pasta
@@ -136,7 +136,7 @@ meals = [[Pasta,Bolognese,Parmesan]
 - Look at the board for game 1 that we have been using.
 - If we wanted to store the positions of fruit for the first *column*, we could use an array like this - *[Cherry, Melon, Nothing, Nothing, Nothing, Nothing]*
 - The second column would need another array - *[Melon, Nothing, Nothing, Nothing, Nothing, Melon]*
-- The third dolum would need another array - *[Melon., Nothing, Banana, Melon, Nothing, Nothing]*
+- The third column would need another array - *[Melon., Nothing, Banana, Melon, Nothing, Nothing]*
 - This would continue and we would end up with 7 arrays.
 - We can then store each of these 7 arrays in a 2d array.
 - Of course it is not very efficient to store fruit types using strings, so numbers are used instead.
@@ -240,7 +240,7 @@ meals = [[Pasta,Bolognese,Parmesan]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: run
 :END:
-- Run game.hmtl
+- Run game.html
 - Try changing your bot's target_x and target_y so that it picks up as many fruit as possible
 * Picking up all the Fruit (in theory)
 :PROPERTIES:
